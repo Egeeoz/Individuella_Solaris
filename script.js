@@ -2,7 +2,7 @@ let apiKey;
 let planetData;
 let clickedPlanet;
 
-let currentClickedPlanet = document.querySelector(".planets__container");
+let currentClickedPlanet = document.querySelector(".main__content");
 
 async function getApiKey() {
   try {
@@ -51,7 +51,7 @@ getApiKey().then(() => {
 
 currentClickedPlanet.addEventListener("click", (event) => {
   if (
-    event.target.tagName === "A" &&
+    (event.target.tagName === "A" || event.target.tagName === "SECTION") &&
     event.target.classList.contains("clicked")
   ) {
     console.log(event.target.id);
