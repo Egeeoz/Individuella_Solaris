@@ -1,7 +1,6 @@
 let apiKey;
 let planetData;
 let clickedPlanet;
-
 let currentClickedPlanet = document.querySelector(".main__content");
 
 async function getApiKey() {
@@ -49,7 +48,7 @@ getApiKey().then(() => {
   getData();
 });
 
-currentClickedPlanet.addEventListener("click", (event) => {
+currentClickedPlanet.addEventListener("click", async (event) => {
   if (
     (event.target.tagName === "A" || event.target.tagName === "SECTION") &&
     event.target.classList.contains("clicked")
@@ -57,10 +56,50 @@ currentClickedPlanet.addEventListener("click", (event) => {
     console.log(event.target.id);
     clickedPlanet = event.target.id;
 
-    planetData.forEach((planetData) => {
-      if (clickedPlanet == planetData.name) {
-        console.log(planetData);
+    try {
+      const selectedPlanet = planetData.find(
+        (planet) => clickedPlanet === planet.name
+      );
+
+      if (selectedPlanet) {
+        // Store the selected planet data in localStorage
+        localStorage.setItem("selectedPlanet", JSON.stringify(selectedPlanet));
+
+        // Redirect to the other HTML page
+        window.location.href = "planet.html";
       }
-    });
+    } catch (error) {
+      console.error("Error handling click event:", error);
+    }
   }
 });
+
+function updatePlanetInfo(planetData) {
+  // Update the elements with the planet information
+  const planetNameElement = document.getElementById("description__name");
+  const planetLatinNameElement = document.getElementById(
+    "description__latinName"
+  );
+  const planetDescriptionTextElement =
+    document.getElementById("description__text");
+  const planetCircumferenceElement = document.getElementById(
+    "description__circumference"
+  );
+  const planetDistanceFromSun = document.getElementById(
+    "description__distance"
+  );
+  const planetMaxTempElement = document.getElementById("description__maxTemp");
+  const planetMinTempElement = document.getElementById("description__minTemp");
+  const planetMoonsElement = document.getElementById("description__moon");
+
+  if (planetNameElement) {
+    planetNameElement.innerText = planetData.name;
+    planetLatinNameElement.innerText = planetData.latinName;
+    planetDescriptionTextElement.innerText = planetData.desc;
+    planetCircumferenceElement.innerText = planetData.circumference;
+    planetDistanceFromSun.innerText = planetData.distance;
+    planetMaxTempElement.innerText = planetData.temp.day;
+    planetMinTempElement.innerText = planetData.temp.night;
+    planetMoonsElement.innerText = planetData.moons;
+  }
+}

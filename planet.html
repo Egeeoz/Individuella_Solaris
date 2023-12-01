@@ -6,30 +6,56 @@
     <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
     <title>Planet</title>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // Retrieve the stored planet data from localStorage
+        const storedPlanetData = localStorage.getItem("selectedPlanet");
+
+        if (storedPlanetData) {
+          // Parse the JSON string to get the planet object
+          const planetData = JSON.parse(storedPlanetData);
+          console.log(storedPlanetData);
+
+          // Update the elements with the planet information
+          updatePlanetInfo(planetData);
+
+          // Clear the stored planet data from localStorage
+          localStorage.removeItem("selectedPlanet");
+        } else {
+          console.error("No planet data found in localStorage.");
+        }
+      });
+    </script>
   </head>
   <body>
-    <main class="container">
+    <main class="main__content container">
       <section class="side__planet"></section>
       <section class="main__description">
-        <section class="description__one" >
-        <h1 class="description__title">JORDEN</h3>
-        <h3 class="description__underTitle">TELLUS</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio est dolorum quia doloribus. Esse voluptas cum corporis pariatur architecto, minus iusto aliquam nostrum officiis porro exercitationem impedit cumque fuga sapiente inventore eveniet dolorum officia quaerat omnis ducimus praesentium rem quod quia ea! Ducimus est laboriosam eius eaque praesentium aliquid quo?
-        </p>
-      </section>
+        <section class="description__one">
+          <h1 id="description__name">JORDEN</h1>
+          <h3 id="description__latinName">TELLUS</h3>
+          <p id="description__text">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio
+            est dolorum quia doloribus. Esse voluptas cum corporis pariatur
+            architecto, minus iusto aliquam nostrum officiis porro
+            exercitationem impedit cumque fuga sapiente inventore eveniet
+            dolorum officia quaerat omnis ducimus praesentium rem quod quia ea!
+            Ducimus est laboriosam eius eaque praesentium aliquid quo?
+          </p>
+        </section>
         <section class="description__two">
-        <h4>OMKRETS</h4>
-        <p>40 075 km</p>
-        <h4>KM FRÅN SOLEN</h4>
-        <p>149 600 000 km</p>
-        <h4>MAX TEMPERATUR</h4>
-        <p>60C</p>
-        <h4>MIN TEMPERATUR</h4>
-        <p>-50C</p>
+          <h4>OMKRETS</h4>
+          <p><span id="description__circumference">40 075</span> km</p>
+          <h4>KM FRÅN SOLEN</h4>
+          <p><span id="description__distance">149 600 000</span> km</p>
+          <h4>MAX TEMPERATUR</h4>
+          <p><span id="description__maxTemp">60</span> C</p>
+          <h4>MIN TEMPERATUR</h4>
+          <p><span id="description__minTemp">-50</span> C</p>
         </section>
         <section class="description__three">
           <h4>MÅNAR</h4>
-          <p>Månen</p>
+          <p id="description__moon">Månen</p>
         </section>
       </section>
     </main>
