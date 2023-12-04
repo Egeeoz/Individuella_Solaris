@@ -93,8 +93,8 @@ function updatePlanetInfo(planetData) {
   const planetMoonsElement = document.getElementById("description__moon");
 
   if (planetNameElement) {
-    planetNameElement.innerText = planetData.name;
-    planetLatinNameElement.innerText = planetData.latinName;
+    planetNameElement.innerText = planetData.name.toUpperCase();
+    planetLatinNameElement.innerText = planetData.latinName.toUpperCase();
     planetDescriptionTextElement.innerText = planetData.desc;
     planetCircumferenceElement.innerText = planetData.circumference;
     planetDistanceFromSun.innerText = planetData.distance;

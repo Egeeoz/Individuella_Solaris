@@ -162,24 +162,14 @@ body {
   left: -38rem;
 } */
 
-#description__name {
-  font-family: Secular One;
-  font-size: 60px;
-  font-weight: 400;
-  line-height: 60px;
-  letter-spacing: 0.09em;
-  text-align: left;
-  color: #ffffff;
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
-#description__latinName {
-  font-family: Lora;
-  font-size: 24px;
-  font-weight: 400;
-  line-height: 24px;
-  letter-spacing: 0.6em;
-  text-align: left;
-  color: #ffd029;
+.main__description {
+  width: 40%;
 }
 
 .container * p {
@@ -200,4 +190,47 @@ body {
   letter-spacing: 0.09em;
   text-align: left;
   color: #ffffff;
+  margin-bottom: 0.25rem;
+}
+
+#description__name {
+  font-family: Secular One;
+  font-size: 60px;
+  font-weight: 400;
+  line-height: 60px;
+  letter-spacing: 0.09em;
+  text-align: left;
+  color: #ffffff;
+  margin-top: 6.3rem;
+}
+
+#description__latinName {
+  font-family: Lora;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.6em;
+  text-align: left;
+  color: #ffd029;
+  margin-top: 1rem;
+}
+
+#description__text {
+  margin: 2rem 0;
+}
+
+hr {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.description__two {
+  margin: 1.8rem 0rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 2rem 0rem;
+}
+
+.description__three {
+  margin-top: 2rem;
 }
