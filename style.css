@@ -1,5 +1,7 @@
+/* Importing fonts */
 @import url("https://fonts.googleapis.com/css2?family=Lora&family=Roboto+Condensed:wght@300&family=Secular+One&display=swap");
 
+/* Setting basic page rules */
 html {
   box-sizing: border-box;
 }
@@ -14,26 +16,15 @@ html * {
 *::after {
   box-sizing: inherit;
 }
-
-/* .container {
-  background: linear-gradient(90deg, #0c164d 0%, #190b22 100%);
-  height: 100vh;
-  max-width: 100vw;
-} */
-
+/* Setting the background color*/
 body {
-  height: 100vh;
-  /* line-height: 1.6;
-  font-size: 1vw;
-  max-width: 100vw; */
   background: linear-gradient(90deg, #0c164d 0%, #190b22 100%);
 }
-
+/* Header styling */
 .header {
   display: flex;
   align-items: flex-end;
   flex-direction: column;
-  /* margin: 0rem 4.25rem 0 0; */
 }
 
 .header__h1 {
@@ -55,7 +46,7 @@ body {
   letter-spacing: 0.6em;
   color: #ffd029;
 }
-
+/* Styling for the planets */
 .main__content-styling {
   display: flex;
   align-items: center;
@@ -72,7 +63,7 @@ body {
   justify-content: space-around;
   align-items: center;
 }
-
+/* The planets own styles */
 #Solen {
   position: relative;
   background-color: #ffd029;
@@ -152,16 +143,7 @@ body {
 
 /* Css for planet.html */
 
-/* .side__planet {
-  display: flex;
-  background-color: #ffd029;
-  height: 78vh;
-  width: 38.541vw;
-  box-shadow: 0px 0px 250px 0px #ffd02933;
-  border-radius: 100%;
-  left: -38rem;
-} */
-
+/* Styling for the main page content container */
 .container {
   width: 100%;
   display: flex;
@@ -172,6 +154,7 @@ body {
   width: 40%;
 }
 
+/* Styling for the contents inside main container */
 .container * p {
   color: #ffffff;
   font-family: Roboto Condensed;
@@ -193,6 +176,7 @@ body {
   margin-bottom: 0.25rem;
 }
 
+/* Styling for planet titles */
 #description__name {
   font-family: Secular One;
   font-size: 60px;
@@ -215,14 +199,12 @@ body {
   margin-top: 1rem;
 }
 
+/* Styling for planet information text */
 #description__text {
   margin: 2rem 0;
 }
 
-hr {
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
+/* Styling for second part with planet information (Extra info like distance from sun and planet temp) */
 .description__two {
   margin: 1.8rem 0rem;
   display: grid;
@@ -231,6 +213,7 @@ hr {
   gap: 2rem 0rem;
 }
 
+/* Styling for last part with planet information (Info about moon/moons) */
 .description__three {
   margin-top: 2rem;
 }
@@ -239,6 +222,11 @@ hr {
   word-wrap: break-word;
 }
 
+hr {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Styling for back button */
 .back__button {
   text-decoration: underline;
   color: #ffffff;

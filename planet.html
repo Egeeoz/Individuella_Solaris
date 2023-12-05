@@ -6,38 +6,21 @@
     <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
     <title>Planet</title>
-    <script>
-      // document.addEventListener("DOMContentLoaded", () => {
-      //   // Retrieve the stored planet data from localStorage
-      //   const storedPlanetData = localStorage.getItem("selectedPlanet");
-
-      //   if (storedPlanetData) {
-      //     // Parse the JSON string to get the planet object
-      //     const planetData = JSON.parse(storedPlanetData);
-      //     console.log(storedPlanetData);
-
-      //     // Update the elements with the planet information
-      //     updatePlanetInfo(planetData);
-
-      //     // Clear the stored planet data from localStorage
-      //     localStorage.removeItem("selectedPlanet");
-      //   } else {
-      //     // console.error("No planet data found in localStorage.");
-      //   }
-      // });
-    </script>
   </head>
   <body>
+    <!-- Main conten of page -->
     <main class="main__content container">
-      <!-- <section class="side__planet"></section> -->
+      <!-- Back button to get to main page -->
       <a href="index.html" class="back__button">Tillbaka</a>
       <section class="main__description">
+        <!-- Planet name and planet latin name and planet information content -->
         <section class="description__one">
           <h1 id="description__name">Välj en planet</h1>
           <h3 id="description__latinName"></h3>
           <p id="description__text"></p>
           <hr />
         </section>
+        <!-- Other information about the planet, like how many km from the sun -->
         <section class="description__two">
           <aside class="description__itemOne">
             <h4>OMKRETS</h4>
@@ -57,6 +40,7 @@
           </aside>
         </section>
         <hr />
+        <!-- Last informative section with information about the planets moon/moons -->
         <section class="description__three">
           <h4>MÅNAR</h4>
           <p id="description__moon"></p>
