@@ -103,3 +103,22 @@ function updatePlanetInfo(planetData) {
     planetMoonsElement.innerText = planetData.moons;
   }
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  // Retrieve the stored planet data from localStorage
+  const storedPlanetData = localStorage.getItem("selectedPlanet");
+
+  if (storedPlanetData) {
+    // Parse the JSON string to get the planet object
+    const planetData = JSON.parse(storedPlanetData);
+    // console.log(storedPlanetData);
+
+    // Update the elements with the planet information
+    updatePlanetInfo(planetData);
+
+    // Clear the stored planet data from localStorage
+    localStorage.removeItem("selectedPlanet");
+  } else {
+    // console.error("No planet data found in localStorage.");
+  }
+});

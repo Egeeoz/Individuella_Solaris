@@ -234,3 +234,15 @@ hr {
 .description__three {
   margin-top: 2rem;
 }
+
+.description__three p {
+  word-wrap: break-word;
+}
+
+.back__button {
+  text-decoration: underline;
+  color: #ffffff;
+  margin: 2rem 2rem 0 0rem;
+  font-size: 18px;
+  font-family: Secular One;
+}
